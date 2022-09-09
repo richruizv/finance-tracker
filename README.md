@@ -8,6 +8,9 @@ This is the finance tracker app from the Complete Ruby on Rails Developer course
 
 * System dependencies
 
+## Bootstrap views
+https://github.com/hisea/devise-bootstrap-views
+
 * Configuration
 
 * Database creation
