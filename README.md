@@ -11,6 +11,9 @@ This is the finance tracker app from the Complete Ruby on Rails Developer course
 ## Bootstrap views
 https://github.com/hisea/devise-bootstrap-views
 
+## IEX API
+https://github.com/dblock/iex-ruby-client
+
 * Configuration
 
 * Database creation
