@@ -14,6 +14,9 @@ https://github.com/hisea/devise-bootstrap-views
 ## IEX API
 https://github.com/dblock/iex-ruby-client
 
+### How to edit your credentials 
+EDITOR="code --wait" rails credentials:edit
+
 * Configuration
 
 * Database creation
