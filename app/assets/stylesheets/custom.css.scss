@@ -1,6 +1,10 @@
 @import 'bootstrap/dist/css/bootstrap';
 @import "font-awesome";
 
+.inline{
+  display: inline;
+}
+
 .search-area {
   padding-top: 50px;
 }
@@ -20,4 +24,9 @@
 
 .logout-button{
   margin-right: 5px;
+}
+
+.user-name {
+  margin-top: 3.5%;
+  margin-right: 3.5%;
 }
