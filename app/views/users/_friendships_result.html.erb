@@ -11,7 +11,7 @@
         class: 'btn btn-success btn-sm' %>
         <% if current_user.can_follow?(friend) %>
           <%= link_to 'Follow friend',
-            user_stocks_path(user: current_user, friend: friend ),
+            friendships_path(friend: friend),
             class: 'btn btn-sm btn-success', method: :post  %>
         <% else %>
           <span class="badge badge-secondary">
