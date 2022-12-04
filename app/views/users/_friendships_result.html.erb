@@ -1,0 +1,9 @@
+<% if @friends %>
+  <% @friends.each do |friend| %>
+    <tr>
+      <th scope="row"><%= friend.email %></th>
+      <td><%= friend.full_name %></td>
+      <td><%= link_to 'Stop following', user_stock_path(friend), method: :delete, data: { confirm: 'Are you sure' }, class: 'btn btn-sm btn-warning' %></td>
+    </tr>
+  <% end %>
+<% end %>
