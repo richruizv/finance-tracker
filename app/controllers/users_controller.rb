@@ -3,13 +3,14 @@ class UsersController < ApplicationController
     @tracked_stocks = current_user.stocks
   end
 
-  def friendships
+  def my_friends
     @friends = current_user.friends
   end
 
   def search
     if params[:friend].present?
-      @friends = User.where(first_name: params[:friend])
+      @friends = User.search(params[:friend])
+      @friends = current_user.except_current_user(@friends)
       if @friends
         respond_to do |format|
           format.js { render partial: 'users/friendships_result' }

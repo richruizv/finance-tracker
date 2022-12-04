@@ -1,9 +1,24 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
 <% if @friends %>
-  <% @friends.each do |friend| %>
-    <tr>
-      <th scope="row"><%= friend.email %></th>
-      <td><%= friend.full_name %></td>
-      <td><%= link_to 'Stop following', user_stock_path(friend), method: :delete, data: { confirm: 'Are you sure' }, class: 'btn btn-sm btn-warning' %></td>
-    </tr>
-  <% end %>
+  <div class="card card-header results-block">
+    <% @friends.each do |friend| %>
+      <div>
+        <strong>Name: </strong> <%= friend.full_name %>
+        <strong>Email:  </strong> <%= friend.email%>
+        <strong>Actions: </strong> <%= link_to 'view profile', '#',
+        class: 'btn btn-success btn-sm' %>
+        <% if current_user.can_follow?(friend) %>
+          <%= link_to 'Follow friend',
+            user_stocks_path(user: current_user, friend: friend ),
+            class: 'btn btn-sm btn-success', method: :post  %>
+        <% else %>
+          <span class="badge badge-secondary">
+            Already following
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 <% end %>

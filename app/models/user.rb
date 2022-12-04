@@ -26,4 +26,21 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}" if first_name || last_name
     "Anonymous"
   end
+
+  def can_follow?(friend)
+    friendships.where(id: friend.id).exists?
+  end
+
+  def self.search(param)
+    param.strip!
+    (matches('first_name',param) + matches('last_name',param) + matches('email',param)).uniq
+  end
+
+  def self.matches(field_name, param)
+    where("#{field_name} like ?", "%#{param}%")
+  end
+
+  def except_current_user(users)
+    users.reject { |user| user.id == self.id}
+  end
 end
