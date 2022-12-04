@@ -11,3 +11,9 @@
     Already following
   </span>
 <% end %>
+<br>
+<% if @tracked_stocks.any? %>
+  <%= render 'users/table' %>
+<% else %>
+  <p> This user is not tracking any stock</p>
+<% end %>
