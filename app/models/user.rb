@@ -28,7 +28,8 @@ class User < ApplicationRecord
   end
 
   def can_follow?(friend)
-    !friendships.where(id: friend.id).exists?
+    
+    !friendships.where(friend_id: friend.id).exists?
   end
 
   def self.search(param)

@@ -7,7 +7,7 @@
       <div>
         <strong>Name: </strong> <%= friend.full_name %>
         <strong>Email:  </strong> <%= friend.email%>
-        <strong>Actions: </strong> <%= link_to 'view profile', '#',
+        <strong>Actions: </strong> <%= link_to 'view profile', user_path(friend),
         class: 'btn btn-success btn-sm' %>
         <% if current_user.can_follow?(friend) %>
           <%= link_to 'Follow friend',
